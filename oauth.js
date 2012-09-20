@@ -38,7 +38,7 @@ var authenticate = function(target, clientId, scopes, callback) {
   
   server.listen(0, function() {
     var client = 'http://127.0.0.1:' + server.address().port + '/',
-        params = {client_id: clientId, redirect_uri: client , response_type: 'token', scope: scopes.join(' ')},
+        params = {client_id: clientId, redirect_uri: client, response_type: 'token', scope: scopes.join(' ')},
         pairs  = [],
         cmds   = {win32: 'cmd', darwin: 'open', other: 'xdg-open'};
     
