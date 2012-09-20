@@ -25,7 +25,13 @@ var authenticate = function(target, callback) {
         response.writeHead(200, {});
         response.end();
         server.close();
-        callback(null, qs.parse(body).access_token);
+        
+        var params = qs.parse(body),
+            token  = params.access_token,
+            error  = params.hasOwnProperty('error') ? new Error(params.error_description) : null;
+        
+        if (error) error.type = params.error;
+        callback(error, token);
       }
     });
   });
