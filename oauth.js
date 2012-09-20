@@ -39,13 +39,9 @@ var authenticate = function(target, clientId, scopes, callback) {
   server.listen(0, function() {
     var addr   = server.address(),
         client = 'http://' + addr.address + ':' + addr.port + '/',
-        params = {client_id: clientId, redirect_uri: client, response_type: 'token', scope: scopes.join(' ')},
-        pairs  = [];
+        params = {client_id: clientId, redirect_uri: client, response_type: 'token', scope: scopes.join(' ')};
     
-    for (var key in params)
-      pairs.push(key + '=' + encodeURIComponent(params[key]));
-    
-    target += '?' + pairs.join('&');
+    target += '?' + qs.stringify(params);
     
     var cmds = {win32: 'cmd', darwin: 'open', other: 'xdg-open'},
         cmd  = cmds[process.platform] || cmds.other,
