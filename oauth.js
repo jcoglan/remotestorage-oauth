@@ -50,7 +50,7 @@ var authenticate = function(target, clientId, scopes, callback) {
     var cmd  = cmds[process.platform] || cmds.other,
         args = (process.platform === 'win32') ? ['/c', 'start', '""', target] : [target];
     
-    child.execFile('open', args);
+    child.execFile(cmd, args);
   });
 };
 
