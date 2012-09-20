@@ -40,15 +40,15 @@ var authenticate = function(target, clientId, scopes, callback) {
     var addr   = server.address(),
         client = 'http://' + addr.address + ':' + addr.port + '/',
         params = {client_id: clientId, redirect_uri: client, response_type: 'token', scope: scopes.join(' ')},
-        pairs  = [],
-        cmds   = {win32: 'cmd', darwin: 'open', other: 'xdg-open'};
+        pairs  = [];
     
     for (var key in params)
       pairs.push(key + '=' + encodeURIComponent(params[key]));
     
     target += '?' + pairs.join('&');
     
-    var cmd  = cmds[process.platform] || cmds.other,
+    var cmds = {win32: 'cmd', darwin: 'open', other: 'xdg-open'},
+        cmd  = cmds[process.platform] || cmds.other,
         args = (process.platform === 'win32') ? ['/c', 'start', '""', target] : [target];
     
     child.execFile(cmd, args);
