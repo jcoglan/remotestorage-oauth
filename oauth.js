@@ -3,7 +3,7 @@ var child = require('child_process'),
     http  = require('http'),
     qs    = require('querystring');
 
-var authenticate = function(target, callback) {
+var authenticate = function(target, clientId, scopes, callback) {
   var server = http.createServer(function(request, response) {
     var body = '';
     request.setEncoding('utf-8');
@@ -38,7 +38,7 @@ var authenticate = function(target, callback) {
   
   server.listen(0, function() {
     var client = 'http://127.0.0.1:' + server.address().port + '/',
-        params = {client_id: 'vault', redirect_uri: client , response_type: 'token', scope: 'vault:rw'},
+        params = {client_id: clientId, redirect_uri: client , response_type: 'token', scope: scopes.join(' ')},
         pairs  = [],
         cmds   = {win32: 'cmd', darwin: 'open', other: 'xdg-open'};
     
@@ -55,7 +55,7 @@ var authenticate = function(target, callback) {
 };
 
 // e.g.
-authenticate('https://local.dev/oauth/me', function(error, token) {
+authenticate('https://local.dev/oauth/me', 'vault', ['vault:rw'], function(error, token) {
   console.log(token);
   process.exit();
 });
