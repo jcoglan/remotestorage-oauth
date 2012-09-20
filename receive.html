@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Receive token</title>
+  </head>
+  <body>
+    
+    <p id="stat">Saving access token&hellip;</p>
+    
+    <script type="text/javascript">
+      var xhr = window.ActiveXObject
+              ? new ActiveXObject("Microsoft.XMLHTTP")
+              : new XMLHttpRequest();
+      
+      xhr.open('POST', '/', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== 4) return;
+        
+        var status = document.getElementById('stat');
+        status.innerHTML = 'You have successfully authenticated. Please close ' +
+                           'this window and return to your shell.';
+      };
+      
+      xhr.send(window.location.hash.substr(1));
+    </script>
+    
+  </body>
+</html>
