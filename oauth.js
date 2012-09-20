@@ -4,8 +4,6 @@ var child = require('child_process'),
     qs    = require('querystring');
 
 var authenticate = function(target, callback) {
-  var browser;
-  
   var server = http.createServer(function(request, response) {
     var body = '';
     request.setEncoding('utf-8');
