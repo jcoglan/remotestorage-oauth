@@ -32,9 +32,10 @@ oauth.authorize(endpoint, client, scopes, options, function(error, token) {
 Available options are:
 
 * `browser`: The name of the web browser executable. Defaults to either `open`,
-  `xdg-open`, or `start` depending on your OS
+  `xdg-open`, or `start` depending on your OS. This has been tested with
+  `elinks` and `w3m`.
 * `inline`: Set to `true` if you want to run a text-mode browser in the current
-  shell
+  shell. This option makes the browser access the provider through a local proxy.
 
 
 ## License
