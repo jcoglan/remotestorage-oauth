@@ -1,7 +1,7 @@
 # remotestorage-oauth
 
-This library allows Node programs to obtain an OAuth access token from a
-remoteStorage server. It does this in one of two ways:
+This library allows command-line Node programs to obtain an OAuth access token
+from a remoteStorage server. It does this in one of two ways:
 
 * It opens the OAuth provider site in the user's preferred browser, and launches
   an HTTP server for the provider to redirect back to, to capture the token
