@@ -4,7 +4,7 @@
 , "author"          : "James Coglan <jcoglan@gmail.com> (http://jcoglan.com/)"
 , "keywords"        : ["remotestorage", "oauth"]
 
-, "version"         : "0.1.1"
+, "version"         : "0.1.2"
 , "engines"         : {"node": ">=0.6.0"}
 , "main"            : "./lib/oauth"
 
