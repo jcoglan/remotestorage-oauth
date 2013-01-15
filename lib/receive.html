@@ -21,12 +21,14 @@
         if (xhr.readyState !== 4) return;
         
         var status = document.getElementById('stat');
-        status.innerHTML = 'You have successfully authenticated. Please close ' +
+        status.innerHTML = 'Authentication complete. Please close ' +
                            'this window and return to your shell.';
       };
       
-      xhr.send(window.location.hash.substr(1));
+      var message = location.hash || location.search;
+      xhr.send(message.replace(/^(#|\?)/, ''));
     </script>
     
   </body>
 </html>
+
