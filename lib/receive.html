@@ -6,29 +6,29 @@
     <title>Receive token</title>
   </head>
   <body>
-    
+
     <p id="stat">Saving access token&hellip;</p>
-    
+
     <script type="text/javascript">
       var xhr = window.ActiveXObject
               ? new ActiveXObject("Microsoft.XMLHTTP")
               : new XMLHttpRequest();
-      
+
       xhr.open('POST', '/', true);
       xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      
+
       xhr.onreadystatechange = function() {
         if (xhr.readyState !== 4) return;
-        
+
         var status = document.getElementById('stat');
         status.innerHTML = 'Authentication complete. Please close ' +
                            'this window and return to your shell.';
       };
-      
+
       var message = location.hash || location.search;
       xhr.send(message.replace(/^(#|\?)/, ''));
     </script>
-    
+
   </body>
 </html>
 
