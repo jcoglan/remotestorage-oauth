@@ -15,9 +15,8 @@
                         }
                       ]
 
-, "repositories"    : [ { "type"  : "git"
-                        , "url"   : "git://github.com/jcoglan/remotestorage-oauth.git"
-                        }
-                      ]
+, "repository"      : { "type"  : "git"
+                      , "url"   : "git://github.com/jcoglan/remotestorage-oauth.git"
+                      }
 }
 
