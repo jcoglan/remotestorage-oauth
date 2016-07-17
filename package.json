@@ -1,19 +1,18 @@
 { "name"            : "remotestorage-oauth"
-, "description"     : "OAuth client for remoteStorage providers"
-, "homepage"        : "http://github.com/jcoglan/remotestorage-oauth"
+, "description"     : "OAuth client for RemoteStorage providers"
+, "homepage"        : "https://github.com/jcoglan/remotestorage-oauth"
 , "author"          : "James Coglan <jcoglan@gmail.com> (http://jcoglan.com/)"
 , "keywords"        : ["remotestorage", "oauth"]
 , "license"         : "MIT"
 
 , "version"         : "0.2.0"
-, "engines"         : {"node": ">=0.6.0"}
+, "engines"         : { "node": ">=0.10.0" }
 , "main"            : "./lib/oauth"
-, "dependencies"    : {"ejs": ""}
+, "dependencies"    : { "ejs": "" }
 
 , "repository"      : { "type"  : "git"
                       , "url"   : "git://github.com/jcoglan/remotestorage-oauth.git"
                       }
 
-, "bugs"            : "http://github.com/jcoglan/remotestorage-oauth/issues"
+, "bugs"            : "https://github.com/jcoglan/remotestorage-oauth/issues"
 }
-

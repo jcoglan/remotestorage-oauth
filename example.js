@@ -1,4 +1,6 @@
-var oauth = require('./lib/oauth');
+'use strict';
+
+var oauth = require('./');
 
 var endpoint = 'https://5apps.com/rs/oauth/jcoglan',
     client   = 'Vault',
@@ -9,4 +11,3 @@ oauth.authorize(endpoint, client, scopes, options, function(error, token) {
   console.log(error, token);
   process.exit();
 });
-
